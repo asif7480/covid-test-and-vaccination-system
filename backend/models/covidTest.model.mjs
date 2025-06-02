@@ -2,14 +2,15 @@ import mongoose from "mongoose";
 
 const covidTestSchema = mongoose.Schema(
   {
-    user: {
+    patient: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "User",
     },
     status: {
       type: String,
-      enum: ["No-result", "positive", "negative"],
+      enum: ["pending", "positive", "negative"],
+      lowercase: true,
       required: true,
     },
   },
