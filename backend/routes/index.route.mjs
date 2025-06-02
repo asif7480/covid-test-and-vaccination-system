@@ -1,6 +1,7 @@
 import express from "express"
 import authRoutes from "./auth.route.mjs"
 import patientRoutes from "./patient.route.mjs"
+import hospitalRoutes from "./hospitals.route.mjs"
 import bookingRoutes from "./booking.route.mjs"
 import vaccineRoutes from "./vaccine.route.mjs"
 import vaccinatedPatientsRoutes from "./vaccinatedPatient.route.mjs"
@@ -13,6 +14,7 @@ const router = express.Router()
 
 router.use("/api/v1/auth", authRoutes)
 router.use("/api/v1/patients", patientRoutes)
+router.use("/api/v1/hospitals", hospitalRoutes)
 router.use("/api/v1/vaccines", vaccineRoutes)
 router.use("/api/v1/vaccinatedPatients", vaccinatedPatientsRoutes)
 router.use('/api/v1/covidTests', covidTestRoutes)
