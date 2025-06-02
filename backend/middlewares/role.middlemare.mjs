@@ -14,7 +14,8 @@ export const checkRole = (...allowedRole) => {
 
             next()
         }catch(err){
-            ErrorResponse(401, err)
+            // ErrorResponse(401, err)
+            next(err)
         }
     }
 }
