@@ -19,7 +19,7 @@ const getAllPatients = asyncHandler(async (request, response) => {
     isApproved: "approved",
   });
 
-  const patients = await User.find({ role: "patient", isApproved: "approved" })
+  const patients = await User.find({ role: "patient" })
     .skip(skip)
     .limit(limit);
 
