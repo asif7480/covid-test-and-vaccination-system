@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
-const vaccinatedSchema = mongoose.Schema(
+const vaccinatedPatientSchema = mongoose.Schema(
     {
-        user: {
+        patient: {
             type: mongoose.Schema.Types.ObjectId, required: true, ref: "User"
         },
         vaccine: {
             type: mongoose.Schema.Types.ObjectId, required: true, ref: "Vaccine"
         },
-        vaccinatedDate: {
+        date: {
             type: Date, required: true
-        },
+        }
 
     },
     {
@@ -18,4 +18,4 @@ const vaccinatedSchema = mongoose.Schema(
     }
 )
 
-export const Vaccinated = mongoose.model("Vaccinated", vaccinatedSchema)
+export const VaccinatedPatient = mongoose.model("VaccinatedPatient", vaccinatedPatientSchema)
