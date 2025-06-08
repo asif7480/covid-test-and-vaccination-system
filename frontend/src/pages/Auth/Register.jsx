@@ -1,32 +1,40 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const registerSchema = z.object({
+  username: z.string().min(1, "Username is required."),
+  email: z.string().email(),
+  password: z.string().min(6, "Password must be atleast 6 digits"),
+  // role: z.enum(['patient', 'hospital'])
+  role: z.string().min(1, "Role is required.")
+})
 
 function Register() {
-  const [input, setInput] = useState({
-    name: "",
-    email: "",
-    password: "",
-    role: "patient",
-  })
 
-  const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value })
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: zodResolver(registerSchema)
+  })
+  
+  const handleRegister = async(data) => {
+    console.log(data)
   }
   return (
     <>
       <div className="h-screen flex flex-row-reverse">
         <div className="w-2/3 max-lg:w-screen">
-          <form action="" className="flex flex-col items-center">
+          <form onSubmit={handleSubmit(handleRegister)} className="flex flex-col items-center">
             <h2 className="text-center pt-20 mb-10 text-3xl sm:text-4xl">Register Form</h2>
             <div className="my-5">
               <input
                 type="text"
                 placeholder="john doe"
                 className="w-full sm:w-96 input"
-                name="name"
-                value={input.name}
-                onChange={handleChange}
+                {...register("username")}
               />
+              <p className='text-red-600'>{ errors.username?.message }</p>
             </div>
 
             <div className="my-5">
@@ -34,10 +42,9 @@ function Register() {
                 type="text"
                 placeholder="john@gmail.com"
                 className="w-full sm:w-96 input"
-                name="email"
-                value={input.email}
-                onChange={handleChange}
+                {...register("email")}
               />
+              <p className='text-red-600'>{ errors.email?.message }</p>
             </div>
 
             <div className="my-5">
@@ -45,17 +52,22 @@ function Register() {
                 type="password"
                 placeholder="*************"
                 className="w-full sm:w-96 input"
-                name="password"
-                value={input.password}
-                onChange={handleChange}
+                {...register("password")}
               />
+              <p className='text-red-600'>{ errors.password?.message }</p>
             </div>
 
             <div className="my-5">
-              <select name="role" id="" className="w-full sm:w-96 input">
+              <select
+                className="w-full sm:w-96 input"
+                id=""
+                {...register("role")}
+              >
+                <option value="">Select Role</option>
                 <option value="patient">Patient</option>
                 <option value="hospital">Hospital</option>
               </select>
+              <p className='text-red-600'>{ errors.role?.message }</p>
             </div>
 
             <div className="my-5">

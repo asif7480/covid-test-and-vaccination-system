@@ -1,30 +1,35 @@
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useState } from "react"
+import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
+import { z } from "zod"
 
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(6, "Password must contain atleast 6 letters.")
+})
 function Login() {
-  const [input, setInput] = useState({
-    email: "",
-    password: ""
-  })
 
-  const handleChange = (e) => {
-    setInput({ ...input, [e.target.name]: e.target.value })
+  const { register, handleSubmit, formState: {errors}} = useForm({
+    resolver: zodResolver(loginSchema)
+  })
+  const handleLogin = async(data) => {
+    console.log(data)
   }
   return (
     <>
       <div className="h-screen flex ">
         <div className="w-2/3 max-lg:w-screen">
-          <form action="" className="flex flex-col items-center">
+          <form onSubmit={handleSubmit(handleLogin)} className="flex flex-col items-center">
             <h2 className="text-center pt-20 mb-10 text-3xl sm:text-4xl  ">Login Form</h2>
             <div className="my-5">
               <input
                 type="text"
                 placeholder="john@gmail.com"
                 className="w-full sm:w-96 input"
-                name="email"
-                value={input.email}
-                onChange={handleChange}
+                { ...register("email") }
               />
+              <p className="text-red-600">{ errors.email?.message}</p>
             </div>
 
             <div className="my-5">
@@ -32,10 +37,9 @@ function Login() {
                 type="password"
                 placeholder="*************"
                 className="w-full sm:w-96 input"
-                name="password"
-                value={input.password}
-                onChange={handleChange}
+                { ...register("password") }
               />
+              <p className="text-red-600">{ errors.password?.message}</p>
             </div>
 
             <div className="my-5">
