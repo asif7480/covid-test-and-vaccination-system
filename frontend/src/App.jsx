@@ -11,6 +11,7 @@ import Hospital from "./pages/Dashboard/Hospital/Hospital"
 import Vaccine from "./pages/Dashboard/Vaccine/Vaccine"
 import VaccinatedPatient from "./pages/Dashboard/VaccinatedPatient/VaccinatedPatient"
 import DashboardLayout from "./components/Dashboard/DashboardLayout"
+import { Button } from "./components/ui/button"
 
 function App() {
 
