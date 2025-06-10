@@ -12,6 +12,8 @@ import Vaccine from "./pages/Dashboard/Vaccine/Vaccine"
 import VaccinatedPatient from "./pages/Dashboard/VaccinatedPatient/VaccinatedPatient"
 import DashboardLayout from "./components/Dashboard/DashboardLayout"
 import { Button } from "./components/ui/button"
+import Vaccines from "./pages/User/Vaccines"
+import Hospitals from "./pages/User/Hospitals"
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="vaccines" element={<Vaccines />} />
+            <Route path="hospitals" element={<Hospitals />} />
           </Route>
 
           <Route path="/dashboard/" element={<DashboardLayout />}>

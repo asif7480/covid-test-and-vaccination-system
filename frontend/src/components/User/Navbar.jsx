@@ -36,28 +36,41 @@ export default function Navbar() {
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Profile</DropdownMenuItem>
+            <DropdownMenuItem>My Appointments</DropdownMenuItem>
             <DropdownMenuItem>Logout</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
         {/* Nav Links on Left */}
         <NavigationMenu>
           <NavigationMenuList className="hidden md:flex space-x-4">
-            
+
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link to={`/home`}>Home</Link> 
+                <Link to={`/home`}>Home</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            
+
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link to={`/about`}>About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            
+
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
                 <Link to={`/gallery`}>Gallery</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link to={`/vaccines`}>Vaccines</Link>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
+                <Link to={`/hospitals`}>Hospitals</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>

@@ -8,7 +8,6 @@ function About() {
     <>
       <Topbar 
         title='About Us' 
-        text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque totam in tenetur unde rem tempore nihil laudantium maiores provident dicta. Debitis asperiores quibusdam ea maxime odit quis, architecto autem veniam?' 
         img={`https://www.asterhospitals.in/sites/default/files/styles/webp/public/2021-01/about-us-new.jpg.webp?itok=WCVIH3LP`}
       />
       <Mission />
