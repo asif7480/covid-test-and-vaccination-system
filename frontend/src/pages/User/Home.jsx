@@ -11,7 +11,6 @@ function Home() {
       <Hero />
       <Overview />
       <Pricing />
-      <Footer />
     </>
   )
 }
