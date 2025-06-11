@@ -1,14 +1,19 @@
 import React from 'react'
 import Navbar from './Navbar'
-import Sidebar from './Sidebar'
+import AppSidebar from './AppSidebar'
 import { Outlet } from 'react-router-dom'
+import { SidebarProvider } from '../ui/sidebar'
 
 function DashboardLayout() {
   return (
     <>
-    <Navbar />
-    <Sidebar />
-    <Outlet />
+      <SidebarProvider>
+        <AppSidebar />
+        <div className='w-full flex flex-col'>
+          <Navbar />
+          <Outlet />
+        </div>
+      </SidebarProvider>
     </>
   )
 }
