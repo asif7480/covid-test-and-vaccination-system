@@ -1,4 +1,6 @@
 import CountCard from "@/components/Dashboard/CountCard"
+import RecentVaccinatedPatients from "@/components/Dashboard/RecentVaccinatedPatients"
+import { Hospital, ShieldUser, Syringe, TestTubeDiagonal, Users } from "lucide-react"
 
 function Dashboard() {
   const data = [
@@ -6,27 +8,59 @@ function Dashboard() {
       title: "hospitals",
       count: 4,
       bgColor: "bg-purple-400",
+      icon: Hospital
     },
     {
       title: "Patients",
       count: 50,
-      bgColor: "bg-slate-400"
+      bgColor: "bg-slate-400",
+      icon: Users,
     },
     {
       title: "Vaccines",
       count: 400,
-      bgColor: "bg-indigo-400"
+      bgColor: "bg-indigo-400",
+      icon: Syringe,
     },
     {
       title: "Covid Test Conduct",
       count: 100,
-      bgColor: "bg-blue-400"
+      bgColor: "bg-blue-400",
+      icon: TestTubeDiagonal,
     },
     {
       title: "Vaccinated Patients",
       count: 20,
-      bgColor: "bg-green-400"
+      bgColor: "bg-green-400",
+      icon: ShieldUser,
     },
+  ]
+
+  const vaccinatedPatients = [
+    {
+      _id: "akslkasg242242",
+      name: "Patient One",
+      vaccine: "Sinovac",
+      date: "2024-05-19"
+    },
+    {
+      _id: "akslkasg242242",
+      name: "Patient Two",
+      vaccine: "Sinopharm",
+      date: "2024-05-19"
+    },
+    {
+      _id: "akslkasg242242",
+      name: "Patient Three",
+      vaccine: "Pfizer",
+      date: "2024-05-19"
+    },
+    {
+      _id: "akslkasg242242",
+      name: "Patient Four",
+      vaccine: "Moderna",
+      date: "2024-05-19"
+    }
   ]
 
   return (
@@ -39,7 +73,12 @@ function Dashboard() {
             ))
           }
         </section>
-        
+
+        {/* recent pages */}
+        <section className="container mx-auto w-5/6 py-10">
+          <h2 className="text-center underline underline-offset-4 decoration-blue-500 text-2xl md:text-4xl py-10 font-semibold">Latest Vaccinated Patients</h2>
+          <RecentVaccinatedPatients vaccinatedPatients={vaccinatedPatients}/>
+        </section>
       </div>
 
 

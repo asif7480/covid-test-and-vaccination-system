@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { Calendar, Home, Hospital, Inbox, Search, Settings, ShieldUser, SquareCheckBig, Syringe, TestTubeDiagonal, Users } from "lucide-react"
 
 import {
   Sidebar,
@@ -19,19 +19,34 @@ const nav_items = [
     icon: Home,
   },
   {
-    title: "Inbox",
+    title: "Approvals",
     url: "#",
-    icon: Inbox,
+    icon: SquareCheckBig,
   },
   {
-    title: "Calendar",
+    title: "Hospitals",
     url: "#",
-    icon: Calendar,
+    icon: Hospital,
   },
   {
-    title: "Search",
+    title: "Patients",
     url: "#",
-    icon: Search,
+    icon: Users,
+  },
+  {
+    title: "Vaccine",
+    url: "#",
+    icon: Syringe,
+  },
+  {
+    title: "Covid Tests",
+    url: "#",
+    icon: TestTubeDiagonal,
+  },
+  {
+    title: "VaccinedPatients",
+    url: "#",
+    icon: ShieldUser,
   },
   {
     title: "Settings",
@@ -46,7 +61,7 @@ function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel className="py-8 text-3xl flex justify-center items-center">Dashboard</SidebarGroupLabel>
+            <SidebarGroupLabel className="py-8 text-3xl flex justify-center items-center text-blue-500 text-shadow-md">Dashboard</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu className="py-8">
                 {nav_items.map((item) => (

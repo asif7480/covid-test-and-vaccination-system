@@ -68,8 +68,8 @@ function Navbar() {
         <div>
           <DropdownMenu>
             <DropdownMenuTrigger className="outline-none">
-              <Avatar className={`h-10 w-10`}>
-                <AvatarImage src="https://github.com/shadcn.png" />
+              <Avatar className={`h-15 w-15`}>
+                <AvatarImage src="https://avatars.githubusercontent.com/u/93794678?v=4" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>

@@ -11,11 +11,14 @@ function CountCard({ data }) {
         <>
             <Card className={`shadow-lg ${data.bgColor} text-white font-bold`}>
                 <CardHeader>
-                    <CardTitle className={`text-2xl font-bold`}>{data.title}</CardTitle>
+                    <CardTitle className={`text-2xl font-bold flex gap-2 items-center`}>
+                        <data.icon />
+                        {data.title}
+                    </CardTitle>
                     {/* <CardDescription>Card Description</CardDescription> */}
                 </CardHeader>
                 <CardContent className={`text-right`}>
-                    <p className="leading-10 text-xl  font-semibold">Count: {data.count}</p>
+                    <p className="leading-10 text-6xl  font-semibold">{data.count}</p>
                 </CardContent>
             </Card>
         </>
