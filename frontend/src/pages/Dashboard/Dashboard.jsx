@@ -11,25 +11,25 @@ function Dashboard() {
       icon: Hospital
     },
     {
-      title: "Patients",
+      title: "patients",
       count: 50,
       bgColor: "bg-slate-400",
       icon: Users,
     },
     {
-      title: "Vaccines",
+      title: "vaccines",
       count: 400,
       bgColor: "bg-indigo-400",
       icon: Syringe,
     },
     {
-      title: "Covid Test Conduct",
+      title: "covid test conduct",
       count: 100,
       bgColor: "bg-blue-400",
       icon: TestTubeDiagonal,
     },
     {
-      title: "Vaccinated Patients",
+      title: "vaccinated patients",
       count: 20,
       bgColor: "bg-green-400",
       icon: ShieldUser,

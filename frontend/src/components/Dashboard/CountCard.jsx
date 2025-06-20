@@ -4,16 +4,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { capitializeWords } from "@/utils/capitializeWords"
 
 function CountCard({ data }) {
-   console.log(data)
     return (
         <>
             <Card className={`shadow-lg ${data.bgColor} text-white font-bold`}>
                 <CardHeader>
                     <CardTitle className={`text-2xl font-bold flex gap-2 items-center`}>
                         <data.icon />
-                        {data.title}
+                        { capitializeWords(data.title)}
                     </CardTitle>
                     {/* <CardDescription>Card Description</CardDescription> */}
                 </CardHeader>
