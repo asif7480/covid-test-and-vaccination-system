@@ -14,6 +14,9 @@ import DashboardLayout from "./components/Dashboard/DashboardLayout"
 import { Button } from "./components/ui/button"
 import Vaccines from "./pages/User/Vaccines"
 import Hospitals from "./pages/User/Hospitals"
+import Approval from "./pages/Dashboard/Approval/Approval"
+import CovidTest from "./pages/Dashboard/CovidTest/CovidTest"
+import Settings from "./pages/Dashboard/Settings/Settings"
 
 function App() {
 
@@ -36,10 +39,13 @@ function App() {
 
           <Route path="/dashboard/" element={<DashboardLayout />}>
             <Route path="" element={<Dashboard />} />
-            <Route path="patient" element={<Patient />} />
-            <Route path="hospital" element={<Hospital />} />
-            <Route path="vaccine" element={<Vaccine />} />
-            <Route path="vaccinatedPatient" element={<VaccinatedPatient />} />
+            <Route path="patients" element={<Patient />} />
+            <Route path="hospitals" element={<Hospital />} />
+            <Route path="vaccines" element={<Vaccine />} />
+            <Route path="approvals" element={<Approval />} />
+            <Route path="covid-tests" element={<CovidTest />} />
+            <Route path="vaccinated-patients" element={<VaccinatedPatient />} />
+            <Route path="settings" element={<Settings />} />
           </Route>
 
 

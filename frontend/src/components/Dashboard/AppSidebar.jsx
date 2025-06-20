@@ -15,42 +15,42 @@ import { Link } from "react-router-dom"
 const nav_items = [
   {
     title: "Home",
-    url: "#",
+    url: "",
     icon: Home,
   },
   {
-    title: "Approvals",
-    url: "#",
-    icon: SquareCheckBig,
-  },
-  {
-    title: "Hospitals",
-    url: "#",
-    icon: Hospital,
-  },
-  {
     title: "Patients",
-    url: "#",
+    url: "patients",
     icon: Users,
   },
   {
+    title: "Hospitals",
+    url: "hospitals",
+    icon: Hospital,
+  },
+  {
     title: "Vaccine",
-    url: "#",
+    url: "vaccines",
     icon: Syringe,
   },
   {
+    title: "Approvals",
+    url: "approvals",
+    icon: SquareCheckBig,
+  },
+  {
     title: "Covid Tests",
-    url: "#",
+    url: "covid-tests",
     icon: TestTubeDiagonal,
   },
   {
     title: "VaccinedPatients",
-    url: "#",
+    url: "vaccinated-patients",
     icon: ShieldUser,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "settings",
     icon: Settings,
   },
 ]
@@ -67,7 +67,7 @@ function AppSidebar() {
                 {nav_items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton className={'hover:bg-blue-500 hover:text-white transition-all ease-in-out duration-75'} asChild>
-                      <Link className="py-6" href={item.url}>
+                      <Link className="py-6" to={`/dashboard/${item.url}`}>
                         <item.icon />
                         <span>{item.title}</span>
                       </Link>
